@@ -26,6 +26,7 @@
 
 8) in /opt/jenkins in worker instance paste
     ```
+    sudo wget agent.jar_link 
     java -jar agent.jar -jnlpUrl http://3.8.202.227:8080/computer/Jenkins-Slave/slave-agent.jnlp -secret c5fa093bc46516a248ae844ac135c2038ab81071dd993ff9beda533950871c0d -workDir "/opt/jenkins"
     ```
 
@@ -35,7 +36,7 @@
     ```
 10) download node js and npm install on both instances
 
-
+11) Set up port 9007 in global security
 ----
 reference 
 http://34.245.115.208:8080/
