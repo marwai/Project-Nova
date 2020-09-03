@@ -37,6 +37,11 @@
 10) download node js and npm install on both instances
 
 11) Set up port 9007 in global security
+
+12) Set up CD pipeline 
+	```
+	make sure credentials have same ID
+	```
 ----
 reference 
 http://34.245.115.208:8080/
