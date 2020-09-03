@@ -4,6 +4,7 @@ tst
 - reset jenkins url
 - reset webhook
 - reset instances 
+- docker login 
 
 
 1) Create IAM account
@@ -74,6 +75,7 @@ sudo apt-get install nodejs -y
 run the build
 
 15) Continuous Deployment
+troubleshooting - docker login
 
 ----
 reference 

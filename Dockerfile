@@ -20,7 +20,7 @@ COPY . .
 
 # Second stage of our build to production - multi stage Docker build
 
-FROM node:alpine
+#FROM node:alpine
 
 # We want to copy only essential things to this layer
 
