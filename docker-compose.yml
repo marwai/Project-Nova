@@ -15,7 +15,7 @@ services:
 
   web:
     # Build the dockerfile in the app in same dir
-    build: ./app
+    build: .
     restart: always
     ports: [3000:3000]
      

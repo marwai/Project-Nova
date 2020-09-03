@@ -1,23 +1,42 @@
-FROM python:3.8 AS app
+# This means we wont have to do install node or npm
+FROM node AS app
 
-WORKDIR /usr/src/app
+# Define our working directory inside the container
 
+WORKDIR /usr/src/
+
+# Copy the dependencies into the container
+
+COPY package*.json ./
+
+# install npm
+
+RUN npm install
+
+
+
+# from the current folder we want to copy everything into the working location of the container
 COPY . .
 
-RUN pip install -r requirements.txt
+# Second stage of our build to production - multi stage Docker build
 
-CMD [ "python", "main.py" ]
+FROM node:alpine
 
-# second stage build
+# We want to copy only essential things to this layer
 
-FROM python:3.8-slim
+# This is the magic line that compressess the size and still provides full functionality
+# The application was lowered from 1GB to 150MB, a reduction of 85%
+# 
+#COPY --from=app /usr/src/app /usr/src/app
 
-COPY --from=app /usr/src/app /usr/src/app
+# Define the work directory for the second stage build
+#WORKDIR /usr/src/app
 
-WORKDIR /usr/src/app
 
-RUN pip install -r requirements.txt
+# Expose the port in which we will run the application
 
-EXPOSE 5000
+EXPOSE 3000
 
-CMD [ "python", "app.py" ]
+# CMD ["node", "seeds/seed.js", "start", "node", "app.js"]
+
+CMD ["node", "app.js"]

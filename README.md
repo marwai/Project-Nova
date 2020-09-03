@@ -48,6 +48,14 @@
 	make sure credentials have same ID
 	```
 test
+
+13) build image
+troubleshooting 
+	```
+
+	```
+
+
 ----
 reference 
 http://34.245.115.208:8080/
