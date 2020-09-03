@@ -65,7 +65,14 @@ troubleshooting
 	# downloading on Master instance works
 	```
 
-14)
+14) install npm and node on docker instance
+ sudo apt-get install python-software-properties
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install nodejs -y
+
+run the build
+
+15) Continuous Deployment
 
 ----
 reference 
