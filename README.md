@@ -53,7 +53,15 @@ test
 troubleshooting 
 	```
 	# download docker onto master first
-	# chmod 666 var/run/docker.sock in worker
+		
+	# In the docker instance
+	# sudo usermod -aG docker ${USER}
+	# newgrp docker
+	# sudo service docker restart
+	# sudo systemctl restart docker
+	# sudo chmod 666 /var/run/docker.sock
+
+	# Then try master instance
 	```
 
 
