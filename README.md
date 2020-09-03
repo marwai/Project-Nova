@@ -5,6 +5,7 @@ tst
 - reset webhook
 - reset instances 
 
+
 1) Create IAM account
 
 2) Login to Jenkins by following installing_jenkins_and_java.sh 
