@@ -62,8 +62,10 @@ troubleshooting
 	# sudo chmod 666 /var/run/docker.sock
 
 	# Then try master instance
+	# downloading on Master instance works
 	```
 
+14)
 
 ----
 reference 
