@@ -53,6 +53,7 @@ test
 troubleshooting 
 	```
 	# download docker onto master first
+	# chmod 666 var/run/docker.sock in worker
 	```
 
 
