@@ -52,7 +52,7 @@ test
 13) build image
 troubleshooting 
 	```
-
+	# download docker onto master first
 	```
 
 
