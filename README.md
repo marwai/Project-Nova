@@ -1,5 +1,5 @@
 # Project Nova
-
+test
 ## Things to do everyday 
 - reset jenkins url
 - reset webhook
@@ -75,7 +75,8 @@ sudo apt-get install nodejs -y
 run the build
 
 15) Continuous Deployment
-troubleshooting - docker login
+troubleshooting 
+- docker login
 
 ----
 reference 
