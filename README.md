@@ -1,5 +1,5 @@
 # Project Nova
-test cd
+test
 ## Things to do everyday 
 - reset jenkins url
 - reset webhook
