@@ -1,44 +1,83 @@
-# IT Jobs Watch Data
+# Project Nova
+test
+## Things to do everyday 
+- reset jenkins url
+- reset webhook
+- reset instances 
+- docker login 
 
-## Introduction
-The aim of this project is to create a simple service that can scrape useful data from ITJobswatch.
 
-## Current Scope
-At present the app is set up to be cloned and used to simply scrape the below services:
+1) Create IAM account
 
-1. Home page top 30 job/roles / skills which can be found [here]()
+2) Login to Jenkins by following installing_jenkins_and_java.sh 
 
-The aim will be to expand this to further services such as:
+3) Create Master Node
 
-* Regular polling of pages and writing to a database for longer terms stats
-* Bespoke calls for specific job role data
+4) once status is running, ssh -i ~/.ssh/nameofkey.pem ubunt@ip_of_the_jenkins_server 
 
-And much more.
+5) Install the following plugins:
+    ```
+    # Docker Pipeline
+    # Docker
+    # GitHub Integration
+    # Pipeline
+    # SSH Agent
+    # icon shim
+    # 
+    ```
 
-## Usage
-_Pre-Requisites_
-* Pycharm IDE
-* Python 3.x + installed
+6) Create EC2 Worker instance 
 
-### Installing packages
-The necessary packages needed to run this program should automatically be picked up by pycharm. You may find a a few pop ups within the IDE that state there are dependencies missing, if you simply install these through the IDE you should be set up correctly.  
+7) Create Worker Node on Jenkins 
+[Worker_node_instructions](https://bhargavamin.com/how-to-do/setup-jenkins-slave-amazon-linux-aws/)
 
-### Running tests
+8) in /opt/jenkins in worker instance paste
+    ```
+    sudo wget agent.jar_link 
+    java -jar agent.jar -jnlpUrl http://3.8.202.227:8080/computer/Jenkins-Slave/slave-agent.jnlp -secret c5fa093bc46516a248ae844ac135c2038ab81071dd993ff9beda533950871c0d -workDir "/opt/jenkins"
+    ```
 
-To test whether the program will work from your machine:
- 
- * Ensure the `config.ini` file has the test environment set to `live`
- * Click the `Terminal` icon which can be found on the menu in the bottom left of Pycharm.
-* Ensure you're in the root path of the project and type `python -m pytest tests/`
+9) Setting up CI job 
+    ```
+    # Credentials 
+    ```
+10) download node js and npm install on both instances
 
-This should execute the tests if any fail you may have issues with this program.
+11) Set up port 9007 in global security
 
-### Running and using the program
-To use the program simply right click on the `main.py` file and then click `Run 'main'`. This will run the command line user interface.
+12) Set up CD pipeline 
+	```
+	make sure credentials have same ID
+	```
+test
 
-Follow the instructions to download via the various options given.
+13) build image
+troubleshooting 
+	```
+	# download docker onto master first
+		
+	# In the docker instance
+	# sudo usermod -aG docker ${USER}
+	# newgrp docker
+	# sudo service docker restart
+	# sudo systemctl restart docker
+	# sudo chmod 666 /var/run/docker.sock
 
-# Next steps
-* Adding a job details search option (essentially be able to search for a specific role and return the details in a CSV)
-* create a connected database for full deployment
-* Build a scheduler as part of a full deployment to poll and add to the database 
+	# Then try master instance
+	# downloading on Master instance works
+	```
+
+14) install npm and node on docker instance
+ sudo apt-get install python-software-properties
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install nodejs -y
+
+run the build
+
+15) Continuous Deployment
+troubleshooting 
+- docker login
+
+----
+reference 
+http://34.245.115.208:8080/
